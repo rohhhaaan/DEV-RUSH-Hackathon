@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEV RUSH - Numerano Club Hackathon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #00001a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            border-color: rgba(0, 255, 255, 0.5);
+        }
+        .btn-register {
+            background: linear-gradient(90deg, #00ffff, #ff00ff);
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 15px rgba(255, 0, 255, 0.5);
+        }
+        .btn-register:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.8), 0 0 25px rgba(255, 0, 255, 0.8);
+        }
+        .text-glow {
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+        }
+        .prize-card {
+            border: 2px solid;
+            border-image-slice: 1;
+            border-width: 2px;
+            border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+            position: relative;
+            background: #00001a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .prize-card::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px;
+            right: -2px; bottom: -2px;
+            background: linear-gradient(to left, #743ad5, #d53a9d);
+            z-index: -1;
+            filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+
+    <div id="particles-js"></div>
+
+    <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header -->
+        <header class="text-center py-12">
+            <h1 class="font-orbitron text-5xl md:text-7xl font-black uppercase text-glow tracking-widest">DEV RUSH</h1>
+            <p class="mt-4 text-lg md:text-xl text-cyan-300">Organized by Numerano Club</p>
+            <p class="text-md md:text-lg text-gray-400">Department of Mathematics, Dayananda Sagar College of Engineering</p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- About Section -->
+            <section id="about" class="my-16 text-center max-w-4xl mx-auto">
+                <h2 class="font-orbitron text-3xl font-bold mb-4 text-cyan-400">The Ultimate Tech Showdown</h2>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    DEV RUSH is a 24-hour hackathon where the brightest minds in technology converge to innovate, build, and create the future. Hosted by the Numerano Club, this event challenges participants to push the boundaries of technology in AIML, Cybersecurity, and Web3. Are you ready to code your legacy?
+                </p>
+            </section>
+
+            <!-- Registration Button -->
+            <div class="text-center my-12">
+                <a href="#register" class="btn-register font-orbitron text-white font-bold py-4 px-10 rounded-full text-xl uppercase tracking-wider">
+                    Register Now
+                </a>
+            </div>
+
+            <!-- Tracks Section -->
+            <section id="tracks" class="my-20">
+                <h2 class="font-orbitron text-4xl font-bold text-center mb-12 text-glow">Hackathon Tracks</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- AIML Card -->
+                    <div class="glass-card rounded-lg p-8 text-center min-w-0">
+                        <div class="text-5xl mb-4 text-cyan-400">🧠</div>
+                        <h3 class="font-orbitron text-xl font-bold mb-2 break-words">AIML</h3>
+                        <p class="text-gray-400 break-words">Dive into the world of artificial intelligence and machine learning. Develop intelligent systems, predictive models, and data-driven solutions that can change the world.</p>
+                    </div>
+                    <!-- Cybersecurity Card -->
+                    <div class="glass-card rounded-lg p-8 text-center min-w-0">
+                        <div class="text-5xl mb-4 text-red-400">🛡️</div>
+                        <h3 class="font-orbitron text-xl font-bold mb-2 break-words">Cybersecurity</h3>
+                        <p class="text-gray-400 break-words">Protect the digital frontier. Create innovative security solutions, tackle vulnerabilities, and build tools to defend against the ever-evolving landscape of cyber threats.</p>
+                    </div>
+                    <!-- Web3 & Blockchain Card -->
+                    <div class="glass-card rounded-lg p-8 text-center min-w-0">
+                        <div class="text-5xl mb-4 text-purple-400">🔗</div>
+                        <h3 class="font-orbitron text-xl font-bold mb-2 break-words">Web3 & Blockchain</h3>
+                        <p class="text-gray-400 break-words">Engineer the decentralized future. Build on blockchain technology, create DApps, explore smart contracts, and contribute to the next generation of the internet.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Prizes Section -->
+            <section id="prizes" class="my-20">
+                <h2 class="font-orbitron text-4xl font-bold text-center mb-12 text-glow">Prizes & Glory</h2>
+                <div class="flex flex-col md:flex-row justify-center items-stretch gap-8">
+                    <!-- 2nd Prize -->
+                    <div class="prize-card p-8 rounded-lg text-center w-full md:w-1/4 order-2 md:order-1">
+                        <h3 class="font-orbitron text-2xl font-bold text-gray-300">2nd Place</h3>
+                        <p class="font-orbitron text-2xl sm:text-3xl md:text-4xl font-black my-4 text-cyan-300">₹30,000</p>
+                    </div>
+                    <!-- 1st Prize -->
+                    <div class="prize-card p-10 rounded-lg text-center w-full md:w-1/3 order-1 md:order-2 md:scale-110">
+                         <h3 class="font-orbitron text-3xl font-bold text-yellow-300">1st Place</h3>
+                        <p class="font-orbitron text-4xl sm:text-5xl md:text-6xl font-black my-4 text-yellow-300 text-glow">₹50,000</p>
+                    </div>
+                    <!-- 3rd Prize -->
+                    <div class="prize-card p-8 rounded-lg text-center w-full md:w-1/4 order-3 md:order-3">
+                        <h3 class="font-orbitron text-2xl font-bold text-gray-400">3rd Place</h3>
+                        <p class="font-orbitron text-2xl sm:text-3xl md:text-4xl font-black my-4 text-cyan-400">₹20,000</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Rules Section -->
+            <section id="rules" class="my-20 max-w-4xl mx-auto">
+                <h2 class="font-orbitron text-4xl font-bold text-center mb-12 text-glow">Rules & Guidelines</h2>
+                <div class="glass-card rounded-lg p-8 md:p-10">
+                    <ul class="list-disc list-inside space-y-4 text-gray-300">
+                        <li><strong>Team Formation:</strong> Teams can consist of 2 to 4 members. You can come with a pre-formed team or find members at the event.</li>
+                        <li><strong>Project Originality:</strong> All projects must be built from scratch during the 24-hour hackathon period. Use of pre-existing code is prohibited, though open-source libraries and frameworks are allowed.</li>
+                        <li><strong>Code of Conduct:</strong> All participants must adhere to a strict code of conduct. Be respectful, inclusive, and collaborative. Harassment or discrimination of any kind will not be tolerated and will result in immediate disqualification.</li>
+                        <li><strong>Submission:</strong> Each team must submit their project, including a link to a public code repository (e.g., GitHub) and a short presentation/demo video, before the final deadline.</li>
+                        <li><strong>Judging Criteria:</strong> Projects will be judged based on technical complexity, innovation, design, real-world applicability, and the quality of the final presentation.</li>
+                        <li><strong>Intellectual Property:</strong> You own what you build. Your team retains full intellectual property rights for your project.</li>
+                        <li><strong>Final Decision:</strong> The decisions of the judges are final and binding.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Registration Form Section -->
+            <section id="register" class="my-20 max-w-2xl mx-auto glass-card p-8 md:p-12 rounded-lg">
+                <h2 class="font-orbitron text-4xl font-bold text-center mb-8 text-glow">Join the Rush</h2>
+                 <p class="text-center text-gray-300 mb-8">Fill out the form below to secure your spot in the hackathon. Let's build something amazing together!</p>
+                <form action="#" method="POST">
+                    <div class="mb-4">
+                        <label for="name" class="block text-cyan-300 font-bold mb-2">Full Name</label>
+                        <input type="text" id="name" name="name" class="w-full bg-gray-900/50 border border-cyan-500/50 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-cyan-300 font-bold mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" class="w-full bg-gray-900/50 border border-cyan-500/50 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="track" class="block text-cyan-300 font-bold mb-2">Select Your Track</label>
+                        <select id="track" name="track" class="w-full bg-gray-900/50 border border-cyan-500/50 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400" required>
+                            <option value="aiml">AIML</option>
+                            <option value="cybersecurity">Cybersecurity</option>
+                            <option value="web3">Web3 & Blockchain</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn-register font-orbitron text-white font-bold py-3 px-8 rounded-full text-lg uppercase tracking-wider w-full">
+                            Confirm Registration
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center py-8 mt-16 border-t border-gray-800">
+            <p class="text-gray-500">&copy; 2025 Numerano Club, DSCE. All rights reserved.</p>
+            <p class="text-gray-600">Designed for DEV RUSH Hackathon</p>
+        </footer>
+
+    </div>
+
+    <!-- Three.js and Particles.js for background animation -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00ffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+
+</body>
+</html>
